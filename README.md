@@ -15,7 +15,7 @@ A monitoring service that automatically discovers and monitors Yealink IP phones
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/yealink-monitor.git
+git clone https://github.com/jh3styr/yealink-monitor.git
 cd yealink-monitor
 
 # Run the installation script
@@ -25,7 +25,7 @@ cd yealink-monitor
 ### Option 2: One-Line Installation (if you trust the source)
 
 ```bash
-git clone https://github.com/yourusername/yealink-monitor.git /tmp/yealink-monitor && cd /tmp/yealink-monitor && ./install.sh
+git clone https://github.com/jh3styr/yealink-monitor.git /tmp/yealink-monitor && cd /tmp/yealink-monitor && ./install.sh
 ```
 
 ## Configuration
