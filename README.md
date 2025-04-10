@@ -114,7 +114,7 @@ With this setup, users can deploy the monitoring system using Git:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/yealink-monitor.git
+git clone https://github.com/jh3styr/yealink-monitor.git
 
 # Run the installation script
 cd yealink-monitor
