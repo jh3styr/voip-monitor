@@ -24,7 +24,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("yealink_monitor.log"),
+        logging.FileHandler("voip_monitor.log"),
         logging.StreamHandler()
     ]
 )
