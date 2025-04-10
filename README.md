@@ -33,7 +33,7 @@ git clone https://github.com/jh3styr/voip-monitor.git /tmp/voip-monitor && cd /t
 After installation, edit the configuration file:
 
 ```bash
-nano /opt/yealink-monitor/config.yaml
+nano /opt/voip-monitor/config.yaml
 ```
 
 Key configuration options:
@@ -47,15 +47,15 @@ Key configuration options:
 To update to the latest version:
 
 ```bash
-cd /opt/yealink-monitor
+cd /opt/voip-monitor
 git pull
-systemctl restart yealink-monitor.service
+systemctl restart voip-monitor.service
 ```
 
 ## Viewing Logs
 
 ```bash
-journalctl -u yealink-monitor.service -f
+journalctl -u voip-monitor.service -f
 ```
 
 ## Configuration File Example
@@ -114,8 +114,8 @@ With this setup, users can deploy the monitoring system using Git:
 
 ```bash
 # Clone the repository
-git clone https://github.com/jh3styr/yealink-monitor.git
+git clone https://github.com/jh3styr/voip-monitor.git
 
 # Run the installation script
-cd yealink-monitor
+cd voip-monitor
 sudo ./install.sh
