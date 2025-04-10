@@ -103,19 +103,3 @@ smtp:
   username: alerts@example.com
   password: your_smtp_password
 ```
-
-## Step 4: Include the voip-monitor.py Script
-
-Include the complete `voip-monitor.py` script as we've developed it.
-
-## Deployment Instructions
-
-With this setup, users can deploy the monitoring system using Git:
-
-```bash
-# Clone the repository
-git clone https://github.com/jh3styr/voip-monitor.git
-
-# Run the installation script
-cd voip-monitor
-sudo ./install.sh
