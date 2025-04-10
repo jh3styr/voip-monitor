@@ -85,13 +85,9 @@ EOSVC
 echo_status "Enabling and starting the service"
 systemctl daemon-reload
 systemctl enable voip-monitor.service
-systemctl start voip-monitor.service
-
-# Check service status
-echo_status "Checking service status"
-systemctl status voip-monitor.service
 
 echo_status "Installation complete!"
 echo_status "You should edit the configuration file at $INSTALL_DIR/config.yaml"
 echo_status "to update email notifications and authentication settings."
+echo_status "Start the service once the config.yaml is complete using > systemctl start voip-monitor.service"
 echo_status "View logs with: sudo journalctl -u voip-monitor.service -f"
