@@ -60,8 +60,6 @@ journalctl -u yealink-monitor.service -f
 
 ## Configuration File Example
 
-## Step 3: Create a config.yaml.example File
-
 ```yaml
 # Check interval in seconds
 check_interval: 300
