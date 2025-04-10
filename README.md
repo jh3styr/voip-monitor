@@ -19,13 +19,13 @@ git clone https://github.com/yourusername/yealink-monitor.git
 cd yealink-monitor
 
 # Run the installation script
-sudo ./install.sh
+./install.sh
 ```
 
 ### Option 2: One-Line Installation (if you trust the source)
 
 ```bash
-git clone https://github.com/yourusername/yealink-monitor.git /tmp/yealink-monitor && cd /tmp/yealink-monitor && sudo ./install.sh
+git clone https://github.com/yourusername/yealink-monitor.git /tmp/yealink-monitor && cd /tmp/yealink-monitor && ./install.sh
 ```
 
 ## Configuration
@@ -33,7 +33,7 @@ git clone https://github.com/yourusername/yealink-monitor.git /tmp/yealink-monit
 After installation, edit the configuration file:
 
 ```bash
-sudo nano /opt/yealink-monitor/config.yaml
+nano /opt/yealink-monitor/config.yaml
 ```
 
 Key configuration options:
@@ -48,14 +48,14 @@ To update to the latest version:
 
 ```bash
 cd /opt/yealink-monitor
-sudo git pull
-sudo systemctl restart yealink-monitor.service
+git pull
+systemctl restart yealink-monitor.service
 ```
 
 ## Viewing Logs
 
 ```bash
-sudo journalctl -u yealink-monitor.service -f
+journalctl -u yealink-monitor.service -f
 ```
 
 ## License
