@@ -58,9 +58,7 @@ systemctl restart yealink-monitor.service
 journalctl -u yealink-monitor.service -f
 ```
 
-## License
-
-[Your license information here]
+## Configuration
 ```
 
 ## Step 3: Create a config.yaml.example File
