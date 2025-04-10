@@ -1,5 +1,3 @@
-# Create a new script with clean content
-cat > install.sh << 'EOL'
 #!/bin/bash
 
 # Yealink Monitor Installation Script
@@ -97,6 +95,5 @@ echo_status "Installation complete!"
 echo_status "You should edit the configuration file at $INSTALL_DIR/config.yaml"
 echo_status "to update email notifications and authentication settings."
 echo_status "View logs with: sudo journalctl -u voip-monitor.service -f"
-EOL
 
 chmod +x install.sh
