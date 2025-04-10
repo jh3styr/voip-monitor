@@ -30,8 +30,8 @@ apt install -y python3 python3-pip python3-venv git arp-scan
 
 # Create directory structure
 echo_status "Creating directory structure"
-mkdir -p /opt/yealink-monitor
-cd /opt/yealink-monitor
+mkdir -p /opt/voip-monitor
+cd /opt/voip-monitor
 
 # Create virtual environment
 echo_status "Setting up Python virtual environment"
@@ -44,7 +44,7 @@ pip install requests pyyaml urllib3
 
 # Download configuration file
 echo_status "Downloading configuration file"
-cat > /opt/yealink-monitor/config.yaml << 'EOL'
+cat > /opt/voip-monitor/config.yaml << 'EOL'
 # Check interval in seconds
 check_interval: 300
 
@@ -90,7 +90,7 @@ EOL
 
 # Download the monitoring script
 echo_status "Downloading monitoring script"
-cat > /opt/yealink-monitor/voip-monitor.py << 'EOL'
+cat > /opt/voip-monitor/voip-monitor.py << 'EOL'
 #!/usr/bin/env python3
 import requests
 import smtplib
@@ -122,7 +122,7 @@ logging.basicConfig(
     ]
 )
 
-def load_config(config_file="/opt/yealink-monitor/config.yaml"):
+def load_config(config_file="/opt/voip-monitor/config.yaml"):
     """Load configuration from YAML file"""
     try:
         with open(config_file, 'r') as file:
@@ -131,7 +131,7 @@ def load_config(config_file="/opt/yealink-monitor/config.yaml"):
         logging.error(f"Failed to load configuration: {e}")
         raise
 
-def save_config(config, config_file="/opt/yealink-monitor/config.yaml"):
+def save_config(config, config_file="/opt/voip-monitor/config.yaml"):
     """Save configuration to YAML file"""
     try:
         with open(config_file, 'w') as file:
@@ -676,11 +676,11 @@ EOL
 
 # Make the script executable
 echo_status "Making the script executable"
-chmod +x /opt/yealink-monitor/voip-monitor.py
+chmod +x /opt/voip-monitor/voip-monitor.py
 
 # Create systemd service file
 echo_status "Creating systemd service file"
-cat > /etc/systemd/system/yealink-monitor.service << 'EOL'
+cat > /etc/systemd/system/voip-monitor.service << 'EOL'
 [Unit]
 Description=Yealink Phone Monitoring Service
 After=network.target
@@ -688,14 +688,14 @@ After=network.target
 [Service]
 Type=simple
 User=root
-WorkingDirectory=/opt/yealink-monitor
-ExecStart=/opt/yealink-monitor/venv/bin/python /opt/yealink-monitor/voip-monitor.py
+WorkingDirectory=/opt/voip-monitor
+ExecStart=/opt/voip-monitor/venv/bin/python /opt/voip-monitor/voip-monitor.py
 Environment="PYTHONUNBUFFERED=1"
 Restart=always
 RestartSec=10
 StandardOutput=syslog
 StandardError=syslog
-SyslogIdentifier=yealink-monitor
+SyslogIdentifier=voip-monitor
 
 [Install]
 WantedBy=multi-user.target
@@ -704,18 +704,18 @@ EOL
 # Enable and start the service
 echo_status "Enabling and starting the service"
 systemctl daemon-reload
-systemctl enable yealink-monitor.service
-systemctl start yealink-monitor.service
+systemctl enable voip-monitor.service
+systemctl start voip-monitor.service
 
 # Check service status
 echo_status "Checking service status"
-systemctl status yealink-monitor.service
+systemctl status voip-monitor.service
 
 echo_status "Deployment complete!"
-echo_status "You should edit the configuration file at /opt/yealink-monitor/config.yaml"
+echo_status "You should edit the configuration file at /opt/voip-monitor/config.yaml"
 echo_status "to update email notifications and authentication settings."
-echo_status "View logs with: sudo journalctl -u yealink-monitor.service -f"
+echo_status "View logs with: sudo journalctl -u voip-monitor.service -f"
 
 # Show initial log output
 echo_status "Initial log output:"
-journalctl -u yealink-monitor.service -n 20 --no-pager
+journalctl -u voip-monitor.service -n 20 --no-pager
