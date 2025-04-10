@@ -9,10 +9,9 @@ debug: true
 
 # Yealink MAC address prefixes
 yealink_mac_prefixes:
-  - '80:5E:0C'  # Corrected Yealink prefix for your devices
-  - '80:5E:C0'  # Keep this in case you have other devices with this prefix
+  - '80:5E:0C'  # Yealink prefix
   - '00:15:65'  # Another Yealink prefix
-  - '24:9A:D8'
+  - '24:9A:D8'  # Another Yealink prefix
 
 # Default settings for discovered endpoints
 default_protocol: https
