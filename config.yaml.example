@@ -21,22 +21,23 @@ default_path: /api/status
 
 # Authentication options for accessing phone APIs
 # The script will try each option in order until one works
+
 auth_options:
   - username: admin
     password: admin
   - username: admin
-    password: W3fixit!
+    password: admin123
   - username: admin
-    password: Welcome123!
+    password: password
 
 # Notification emails (can be a single email or a list)
 notification_email:
-  - peter@wefixit.com.au
-  - peter@yirra.com.au
+  - admin@example.com
+  # Add more email addresses as needed
 
 # SMTP configuration for sending emails
 smtp:
-  server: smtp.wefixit.au
+  server: smtp.example.com
   port: 587
-  username: maxo-notify@wefixit.au
-  password: gO9A87HJ
+  username: alerts@example.com
+  password: your_smtp_password
