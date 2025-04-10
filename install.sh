@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Yealink Monitor Installation Script
-# This script installs the Yealink phone monitoring service
+# VoIP Monitor Installation Script
+# This script installs the VoIP phone monitoring service
 
 set -e  # Exit on any error
 
@@ -21,7 +21,7 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-echo_status "Starting Yealink Monitor installation"
+echo_status "Starting VoIP Monitor installation"
 
 # Update system and install dependencies
 echo_status "Updating system and installing dependencies"
@@ -95,5 +95,3 @@ echo_status "Installation complete!"
 echo_status "You should edit the configuration file at $INSTALL_DIR/config.yaml"
 echo_status "to update email notifications and authentication settings."
 echo_status "View logs with: sudo journalctl -u voip-monitor.service -f"
-
-chmod +x install.sh
