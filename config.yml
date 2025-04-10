@@ -1,0 +1,42 @@
+# Check interval in seconds
+check_interval: 300
+
+# MAC address scan interval in seconds (default: 3600 = 1 hour)
+mac_scan_interval: 3600
+
+# Enable debug logging
+debug: true
+
+# Yealink MAC address prefixes
+yealink_mac_prefixes:
+  - '80:5E:0C'  # Corrected Yealink prefix for your devices
+  - '80:5E:C0'  # Keep this in case you have other devices with this prefix
+  - '00:15:65'  # Another Yealink prefix
+  - '24:9A:D8'
+
+# Default settings for discovered endpoints
+default_protocol: https
+default_port: 443
+default_path: /api/status
+
+# Authentication options for accessing phone APIs
+# The script will try each option in order until one works
+auth_options:
+  - username: admin
+    password: admin
+  - username: admin
+    password: W3fixit!
+  - username: admin
+    password: Welcome123!
+
+# Notification emails (can be a single email or a list)
+notification_email:
+  - peter@wefixit.com.au
+  - peter@yirra.com.au
+
+# SMTP configuration for sending emails
+smtp:
+  server: smtp.wefixit.au
+  port: 587
+  username: maxo-notify@wefixit.au
+  password: gO9A87HJ
