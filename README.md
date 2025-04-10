@@ -25,7 +25,7 @@ cd voip-monitor
 ### Option 2: One-Line Installation (if you trust the source)
 
 ```bash
-git clone https://github.com/jh3styr/voip-monitor.git /tmp/voip-monitor && cd /tmp/voip-monitor && ./install.sh
+git clone https://github.com/jh3styr/voip-monitor.git /tmp/voip-monitor && cd /tmp/voip-monitor && chmod +x install.sh && ./install.sh
 ```
 
 ## Configuration
